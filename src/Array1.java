@@ -1,34 +1,31 @@
 import java.util.Scanner;
 
 public class Array1 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
-    static void main(String[] args) {
-        /*
-        int[] ages = {58,48,32,29,28,26,25,24,22,17,15,15};
+        System.out.print("Enter the number of subjects: ");
+        int subjectCount = input.nextInt();
 
-        for (int i= 0 ; i < ages.length ; i++){
-            System.out.println(ages[i]);
-
+        if (subjectCount <= 0) {
+            System.out.println("The number of subjects must be positive.");
+            input.close();
+            return;
         }
 
-/*
-
-         */
-        Scanner in = new Scanner(System.in);
-        System.out.print("Enter Number materials: ");
-
-        double mat [] = new double[in.nextInt()];
+        double[] marks = new double[subjectCount];
         double total = 0;
 
-        for (int i = 0 ; i < mat.length ; i++){
-            System.out.print("mark materials "+ (i + 1)+ ": ");
-            mat[i]=in.nextInt();
-            total +=mat[i];
+        for (int i = 0; i < marks.length; i++) {
+            System.out.print("Enter mark " + (i + 1) + ": ");
+            marks[i] = input.nextDouble();
+            total += marks[i];
         }
 
-        System.out.println(total);
-        double average = (total / mat.length);
-        System.out.println("The Average = " + average);
+        double average = total / marks.length;
+        System.out.println("Total = " + total);
+        System.out.println("Average = " + average);
 
+        input.close();
     }
 }

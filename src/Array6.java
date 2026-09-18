@@ -1,32 +1,26 @@
 import java.util.Scanner;
 
 public class Array6 {
-    static void main(String[] args) {
-        /*
-        اكتب برنامج Java يقوم بالآتي:
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int[] numbers = new int[5];
 
-* ينشئ مصفوفة لتخزين 5 أعداد صحيحة.
-* يطلب من المستخدم إدخال الأعداد.
-* يطبع جميع الأعداد الزوجية الموجودة في المصفوفة.
-* يحسب عدد الأعداد الزوجية
-         */
-        Scanner in = new Scanner(System.in);
-        int[] num = new int[5];
-        for (int i = 0; i < num.length ; ++i){
-            System.out.print("Enter number "+ (i + 1) + ": ");
-            num[i] = in.nextInt();
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.print("Enter number " + (i + 1) + ": ");
+            numbers[i] = input.nextInt();
         }
-        double count =0;
 
-        System.out.println(" ======== Even numbers ======== ");
+        int evenCount = 0;
+        System.out.println("Even numbers:");
 
-        for (int i = 0 ; i < num.length ; ++i){
-
-            if (num[i] % 2 == 0){
-                System.out.println("The Number "+ (i+1)+ ": " + num[i]);
-                count ++;
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                System.out.println(number);
+                evenCount++;
             }
         }
-        System.out.println( "Even numbers count: " +count);
+
+        System.out.println("Even numbers count: " + evenCount);
+        input.close();
     }
 }
